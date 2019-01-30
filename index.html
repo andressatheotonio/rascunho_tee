@@ -18,40 +18,48 @@
   </a>
 </nav>
 
-<div class="container pt-5">
-        <div class="row">
-                <div class="col-sm">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">ThermoBeer</h1>
+    <p class="lead">Servidor para monitoramento remoto da fermentação de cervejas artesanais.</p>
+  </div>
+</div>
+
+<div class="container">
+        <div class="row align-center">
+
+            <div class="col">
+                <img src="https://github.com/andressatheotonio/rascunho_tee/blob/master/ThermoBeer.png?raw=true" alt="Logotipo ThermoBeer">
+            </div>
+
+                <div class="col">
                         <div class="card border-warning mb-3" style="width: 18rem;">
-                          <img src="https://github.com/andressatheotonio/rascunho_tee/blob/master/ThermoBeer.png?raw=true" class="card-img-top" alt="...">
                           <div class="card-body">
                             <h5 class="card-title" id ="nomecerveja"></h5>
-                            <p class="card-text">A temperatura de fermentação da cerveja atual está sendo monitorada.</p>
+                            <p class="card-text">Monitorando...</p>
                           </div>
                           <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Tipo: <h6 id="tipocerveja"></h6></li>
-                            <li class="list-group-item">Levedura: <h6 id="levedcerveja"></h6></li>
-                            <li class="list-group-item">Temperatura: <h6 id="hightemp" - id="lowtemp"></h6></li>
+                            <li class="list-group-item">Tipo: <a id="tipocerveja"></a></li>
+                            <li class="list-group-item">Levedura: <a id="levedcerveja"></a></li>
+                            <li class="list-group-item">Temperatura: <a id="hightemp" - id="lowtemp"></a></li>
                           </ul>
-                          <div class="card-body">
-                            <a href= id="receitacerveja" class="card-link">Receita da Cerveja</a>
-                          </div>
                         </div>
                       </div>
         
-          <div class="col-sm align-center">
-            <div class="card text-center bg-warning mb-3" style="max-width: 18rem;">
+          <div class="col">
+            <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
                 <div class="card-header">Temperatura atual</div>
                 <div class="card-body">
-                    <h5 id="sensor">
-                    </h5>
+                    <h1 id="sensor">
+                    </h1>
           </div>
         </div>
 
-        <div class="card text-center bg-warning mb-3" style="max-width: 18rem;">
+        <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
                 <div class="card-header">Estado de Conexão</div>
                 <div class="card-body">
-                    <h5 id="statusc">
-                    </h5>
+                    <h1 id="statusc">
+                    </h1>
           </div>
         </div>
 

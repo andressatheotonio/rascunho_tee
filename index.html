@@ -7,83 +7,86 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="C:\Users\Andressa Theotônio\Desktop\style.css" type="text/css">
+    <link href="style.css" rel="stylesheet">
+
 
     <title>ThermoBeer</title>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="https://github.com/andressatheotonio/rascunho_tee/blob/master/favicon-32x32.png?raw=true" width="30" height="30" class="d-inline-block align-top" alt="">
-    Thermobeer
-  </a>
-</nav>
+      <a class="navbar-brand" href="#">
+        <img src="https://github.com/andressatheotonio/rascunho_tee/blob/master/favicon-32x32.png?raw=true" width="30" height="30" class="d-inline-block align-top" alt="">
+        Thermobeer
+      </a>
+    </nav>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h4 class="display-4">ThermoBeer</h4>
-    <p class="lead">Servidor para monitoramento remoto da fermentação de cervejas artesanais.</p>
-  </div>
-</div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h4 class="display-4">ThermoBeer</h4>
+        <p class="lead">Servidor para monitoramento remoto da fermentação de cervejas artesanais.</p>
+      </div>
+    </div>
 
-<div class="invisible">
     <div class="container">
-      <h1 class="display-4">ThermoBeer</h1>
-      <p class="lead">Servidor para monitoramento remoto da fermentação de cervejas artesanais.</p>
-    </div>
-  </div>
+        <div id="wrapper">
+          <div class="loader-container">
+            <div class="meter">0</div>
+            <span class="runner"></span>
+          </div>
+        </div>
+      </div>
+    
+    <div class="container">
+      <div class="row align-center">
+        <div class="col">
+          <img src="https://github.com/andressatheotonio/rascunho_tee/blob/master/ThermoBeer.png?raw=true" alt="Logotipo ThermoBeer">
+        </div>
 
-<div class="container">
-        <div class="row align-center">
-            <div class="col">
-                <img src="https://github.com/andressatheotonio/rascunho_tee/blob/master/ThermoBeer.png?raw=true" alt="Logotipo ThermoBeer">
+        <div class="col">
+          <div class="card border-warning mb-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Dados da Cerveja</h5>
             </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Nome: <a id="nomecerveja"></a></li>
+              <li class="list-group-item">Tipo: <a id="tipocerveja"></a></li>
+              <li class="list-group-item">Levedura: <a id="levedcerveja"></a></li>
+              <li class="list-group-item">Temperatura: <a id="hightemp" - id="lowtemp"></a></li>
+            </ul>
+          </div>
+        </div>
 
-                <div class="col">
-                        <div class="card border-warning mb-3" style="width: 18rem;">
-                          <div class="card-body">
-                            <h5 class="card-title">Dados da Cerveja</h5>
-                          </div>
-                          <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Nome: <a id="nomecerveja"></a></li>
-                            <li class="list-group-item">Tipo: <a id="tipocerveja"></a></li>
-                            <li class="list-group-item">Levedura: <a id="levedcerveja"></a></li>
-                            <li class="list-group-item">Temperatura: <a id="hightemp" - id="lowtemp"></a></li>
-                          </ul>
-                        </div>
-                      </div>
+        <div class="col">
+          <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
+            <div class="card-header">Temperatura atual</div>
+            <div class="card-body">
+              <h5 id="sensor">XX°C
+              </h5>
+            </div>
+          </div>
+
+          <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
+            <div class="card-header">Estado de Conexão</div>
+            <div class="card-body">
+              <h5 id="statusc">Aguardando Conexão...
+              </h5>
+            </div>
+          </div>
+          
+          <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
+            <div class="card-header">Relé</div>
+            <div class="card-body">
+              <h5 id="statusrele">Desligado</h5>
+              <input class = "btn btn-light" type="button" onclick = "ReleAcender()" value="Ligar"/>
+              <input class = "btn btn-dark" type="button" onclick = "ReleApagar()" value="Desligar"/>
+            </div>
+          </div>
+
+        </div>
         
-          <div class="col">
-            <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
-                <div class="card-header">Temperatura atual</div>
-                <div class="card-body">
-                    <h5 id="sensor">XX°C
-                    </h5>
-          </div>
-        </div>
-
-        <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
-                <div class="card-header">Estado de Conexão</div>
-                <div class="card-body">
-                    <h5 id="statusc">Aguardando Conexão...
-                    </h5>
-          </div>
-        </div>
-
-        </div>
-        </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div id="wrapper">
-        <div class="loader-container">
-          <div class="meter">0</div>
-          <span class="runner"></span>
-        </div>
+      </div>
     </div>
-</div>
-</div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -91,8 +94,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-    <script type="text/javascript" src="C:\Users\Andressa Theotônio\Desktop\model.js"></script>
-    <script type="text/javascript" charset="utf-8">
+    <script src = "model.js" type="text/javascript" charset="utf-8">
 
       var socket = io.connect('thermobeer.herokuapp.com');
       socket.on("atualiza", function(dados) {
@@ -111,7 +113,23 @@
           document.getElementById("lowtemp").innerHTML = dados["LOWTEMP"]
         if("HIGHTEMP" in dados)
           document.getElementById("hightemp").innerHTML = dados["HIGHTEMP"] 
+        if("RELE" in dados)
+            if(dados["RELE"] == 1)
+              document.getElementById("statusrele").innerHTML = "Ligado"
+            else
+              document.getElementById("statusrele").innerHTML = "Desligado"
       });
+
+      function ReleAcender() {
+        console.log("acender")
+        socket.emit('rele_acender')
+      }
+
+      function ReleApagar() {
+        console.log("apagar")
+        socket.emit('rele_apagar')
+      }
+
     </script>  
   </body>
 </html>

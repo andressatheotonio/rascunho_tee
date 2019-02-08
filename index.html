@@ -26,16 +26,32 @@
         <p class="lead">Servidor para monitoramento remoto da fermentação de cervejas artesanais.</p>
       </div>
     </div>
-
+    
     <div class="container">
-        <div id="wrapper">
-          <div class="loader-container">
-            <div class="meter">0</div>
-            <span class="runner"></span>
+      <div class="row mb-5"><br>
+        <div class="col">
+          <div class="progress">
+            <div class="bar-step" style="left: 35%">
+              <div class="label-percent">35°C</div>
+              <div class="label-line"></div>
+            </div>
+            <div class="bar-step" style="left: 15%">
+              <div class="label-percent">15°C</div>
+              <div class="label-line"></div>
+            </div>
+            <div class="bar-step" style="left: 20%">
+              <div class="label-txt"></div>
+              <div class="label-percent">Atual</div>
+              <div class="label-line"></div>
+            </div>
+            <div class="progress-bar progress-bar-warning" style="width: 46%;"></div>
           </div>
         </div>
       </div>
+    </div>
+  
     
+
     <div class="container">
       <div class="row align-center">
         <div class="col">
@@ -72,7 +88,7 @@
               </h5>
             </div>
           </div>
-          
+
           <div class="card text-center bg-warning mb-4" style="max-width: 18rem;">
             <div class="card-header">Relé</div>
             <div class="card-body">
@@ -83,7 +99,7 @@
           </div>
 
         </div>
-        
+
       </div>
     </div>
 
@@ -114,10 +130,10 @@
         if("HIGHTEMP" in dados)
           document.getElementById("hightemp").innerHTML = dados["HIGHTEMP"] 
         if("RELE" in dados)
-            if(dados["RELE"] == 1)
-              document.getElementById("statusrele").innerHTML = "Ligado"
-            else
-              document.getElementById("statusrele").innerHTML = "Desligado"
+          if(dados["RELE"] == 1)
+            document.getElementById("statusrele").innerHTML = "Ligado"
+        else
+          document.getElementById("statusrele").innerHTML = "Desligado"
       });
 
       function ReleAcender() {
